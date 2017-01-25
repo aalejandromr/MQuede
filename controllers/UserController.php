@@ -1,18 +1,31 @@
 <?php
+require_once("models/User.php");
+class UserController{
 
-require_once '../classes/User.php';
-require_once '../classes/Conexion.php';
-
-  if(isset($_POST['action'])){
-    $username = $_POST['user_name'];
-    $userpassword = md5($_POST['password']);
-    $user = new User($username, $userpassword);
-
+  public function index(){
+    require_once("views/User/index.php");
   }
 
-if ($result = $conn->query("select * FROM usrs LIMIT 10")) {
-    printf("Select returned %d rows.\n", $result->num_rows);
+  public function login(){
+    $user = new User($_POST['user_name'], md5($_POST['password']));
+    #$_SESSION['conexion'];
+    $consulta = "select * from users where user_name = '" . $user->user_name . "' and user_password = '" . $user->user_password . "'";
+    if($sentencia = $_SESSION['conexion']->prepare($consulta))
+    {
+      $sentencia->execute();
+      $sentencia->store_result();
+      if(($sentencia->num_rows))
+      {
+        $_SESSION['login'] = TRUE;
+        $sentencia->close();
+        header("Location: index.php?controller=Grua&action=dashboard"); 
+      }
+      else
+      {
+        $_SESSION['login'] = FALSE;
+      }
+    }
+  }
 
-    /* free result set */
-    $result->close();
+
 }
