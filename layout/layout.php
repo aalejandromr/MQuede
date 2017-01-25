@@ -26,7 +26,7 @@
               <li><a href="sass.html">Sass</a></li>
               <li><a href="badges.html">Components</a></li>
               <li><a href="collapsible.html">Javascript</a></li>
-              <li><a href="mobile.html">Cerrar Sesion</a></li>
+              <li><a href="mobile.html">Cerrar Sesiones</a></li>
             </ul>
           </div>
         </nav>    
