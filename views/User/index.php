@@ -4,15 +4,15 @@
       <div class="input-field col s12">
         <i class="material-icons prefix">perm_identity</i>
         <input id="user_name" name="user_name" type="text" class="validate" required>
-        <label for="user_name">User Name</label>
+        <label for="user_name">Usuario</label>
       </div>
       <div class="input-field col s12">
         <i class="material-icons prefix">lock_outline</i>
         <input id="password" name="password" type="password" class="validate" required>
-        <label for="pasword">Password</label>
+        <label for="pasword">Contraseña</label>
       </div>
       <div class="input-field col s6 offset-s3">
-      <button class="btn waves-effect waves-light" type="submit" name="action"> Submit
+      <button class="btn waves-effect waves-light" type="submit" name="action"> Loguear
         <i class="material-icons right">send</i>
       </button>
       </div>

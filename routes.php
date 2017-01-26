@@ -1,13 +1,12 @@
 <?php
   include 'models/Conexion.php';
-  if (isset($_GET['controller']) && isset($_GET['action'])) {
-    $controller = $_GET['controller'];
-    $action     = $_GET['action'];
+  if (isset($_REQUEST['controller']) && isset($_REQUEST['action'])) {
+    $controller = $_REQUEST['controller'];
+    $action     = $_REQUEST['action'];
   } else {
     $controller = 'User';
     $action     = 'index';
   }
-    
     require_once('controllers/' . $controller . 'Controller.php');
     switch($controller) {
       case 'User':
